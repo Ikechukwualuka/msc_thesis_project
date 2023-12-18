@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><b>Utility Field Verification App</b></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* iPhone frame styles */
+    .phone-frame {
+      position: relative;
+      width: 360px;
+      height: 640px;
+      margin: 0 auto;
+      padding: 20px 0;
+      background-color: #f2f2f2;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .phone-screen {
+      position: relative;
+      width: 320px;
+      height: 620px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      background-image: url('https://imgur.com/hnRjf2q.png');
+      background-repeat: repeat;
+      opacity: 2;
+    }
+
+    /* Style the dropdown button */
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Style the dropdown button */
+    .dropbtn {
+      background-color: #87CEEB;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* Style the dropdown button */
+    .searchme {
+      background-color: #87CEEB;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      width: 90%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      height: 30px;
+    }
+
+    /* Style the form */
+    .form {
+      background-color: #87CEEB;
+      color: white;
+      padding: 4px;
+      font-size: 10px;
+      border: none;
+      cursor: pointer;
+      width: 95%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      position: relative;
+      align-items: left;
+      height: 170px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    textarea {
+      width: 70%;
+      max-width: 400px;
+      height: 10px;
+    }
+
+    </body>
+
+    /* Dropdown button on hover & focus */
+    .dropbtn:hover,
+    .dropbtn:focus {
+      background-color: #3e8e41;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+    .show {
+      display: block;
+    }
+
+    /* iPhone frame styles */
+    .phone-frame {
+      position: relative;
+      width: 360px;
+      height: 700px;
+      margin: 0 auto;
+      padding: 20px 0;
+      background-color: #333;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .phone-screen {
+      position: relative;
+      width: 320px;
+      height: 630px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .app-logo {
+      position: absolute;
+      top: 4px;
+      left: 7px;
+      width: 354px;
+      height: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <img src="https://imgur.com/kIMZKc8.png" alt="topbar" class="app-logo">
+      <h3 class="halo-text">For - Distribution Insight | Field Operation | Energy Track | DSS Overview | Issue Log</h3>
+      <style>
+        .drop {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          background-color: #87CEEB;
+
+        }
+
+        .halo-text {
+          font-family: Blackadder ITC;
+          font-size: 20px;
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #c3ceff, 0 0 100px #c3ceff, 0 0 150px #c3ceff;
+          width: 50;
+          height: 60px;
+          align-items: center;
+        }
+      </style>
+
+
+
+      <label>
+        <input type="radio" name="state" value="abia">
+        Abia
+        <div class="drop">
+          <select>
+            <option value="">Select District</option>
+            <option value="umuahia">Aba</option>
+            <option value="aba">Ariaria</option>
+            <option value="ohafia">Umuahia</option>
+          </select>
+        </div>
+      </label>
+
+      <label>
+        <input type="radio" name="state" value="anambra">
+        Anambra
+        <div class="drop">
+          <select>
+            <option value="">Select District</option>
+            <option value="awka">Awka</option>
+            <option value="ekwulobia">Ekwulobia</option>
+            <option value="nnewi">Nnewi</option>
+            <option value="ogbaru">Ogbaru</option>
+            <option value="ogidi">Ogidi</option>
+            <option value="onitsha">Onitsha</option>
+          </select>
+        </div>
+      </label>
+
+      <label>
+        <input type="radio" name="state" value="ebonyi">
+        Ebonyi
+        <div class="drop">
+          <select>
+            <option value="">Select District</option>
+            <option value="abakaliki">Abakaliki</option>
+            <option value="afikpo">Afikpo</option>
+            <option value="ezzamgbo">Ezzamgbo</option>
+          </select>
+        </div>
+      </label>
+      <label>
+        <input type="radio" name="state" value="enugu">
+        Enugu
+        <div class="drop">
+          <select>
+            <option value="">Select District</option>
+            <option value="abakpa">Abakpa</option>
+            <option value="awkunanaw">Awkunanaw</option>
+            <option value="nsukka">Nsukka</option>
+            <option value="ogui">Ogui</option>
+          </select>
+        </div>
+      </label>
+
+      <label>
+        <input type="radio" name="state" value="imo">
+        Imo
+        <div class="drop">
+          <select>
+            <option value="">Select District</option>
+            <option value="mbaise">Mbaise</option>
+            <option value="new owerri">New Owerri</option>
+            <option value="okigwe">Okigwe</option>
+            <option value="orlu">Orlu</option>
+            <option value="owerri">Owerri</option>
+          </select>
+        </div>
+      </label>
+
+      <h4>
+
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Click to Select Modeled Transformer</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="https://qgiscloud.com/CHUKWUALUKA/Thesis_Study_Coverage/?l=direct%20customer%20%2Cindirect%20consumer%20%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cinjection%20ss%2Ctcn%20station%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cdss%20to%20pole%20line%2Cdistributor%20line%20%2Cfeeder%20line%2Cht%20to%20dss%20line%2Cinjection%20to%20ht%20connection%2Ctcn%20injection%20connection%2Cstudy%20area%201m%20contour!%2Croad%2Cbuilding%20footprint%2Cstudy%20area%20boundary%2CDEM%20imagery!&bl=mapnik&t=Thesis_Study_Coverage&e=752122%2C683324%2C756356%2C685396">Study_Area</a>
+            <a
+              href="https://qgiscloud.com/GEOsolution/Shanahan_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cbuilding%2Cboundary&bl=&t=Shanahan_DSS_Transformer_&e=753975%2C683949%2C754821%2C684363">Shanahan_DSS</a>
+            <a
+              href="https://qgiscloud.com/Mapper/Umuchu_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20power%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cbuilding%2Cboundary&bl=&t=Umuchu_DSS_Transformer_&e=753448%2C684280%2C754295%2C684694">Umuchu_DSS</a>
+            <a
+
+href="https://qgiscloud.com/CHUKWUALUKA/Yahaya_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cyahaya_dss_building%2Cboundary&bl=&t=Yahaya_DSS_Transformer_&e=753989%2C684218%2C754836%2C684632">Yahaya_DSS</a>              
+          </div>
+      </h4>
+      <title>Real Search Button</title>
+      </head>
+
+      <body>
+        <div class="searchme">
+          <label for="Transformers">Select Maps here:</label>
+          <select id="Transformers">
+            <option value="https://drive.google.com/file/d/1Yy9xYSjfim2h7eqNyeuZBBbm2UwbHIyV/view?usp=drive_link">
+              Shanahan DSS</option>
+            <option value="https://drive.google.com/file/d/1cGQ9UarNH_-yl9eFFale3bTVhQVsjjVA/view?usp=drive_link">Umuchu
+              DSS</option>
+            <option value="https://drive.google.com/file/d/1mVpRzmzhgACjNrU-RbHHJwMX4VDA6_Yv/view?usp=drive_link">Yahaya
+              DSS</option>
+          </select>
+
+          <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search">
+
+
+          <script>
+            function searchFunction() {
+              var input, filter, select, option, search, i;
+              input = document.getElementById("searchInput");
+              filter = input.value.toUpperCase();
+              select = document.getElementById("Transformers");
+              option = select.getElementsByTagName("option");
+              search = document.getElementById("searchInput").value;
+              for (i = 0; i < option.length; i++) {
+                if (option[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  option[i].style.display = "";
+                } else {
+                  option[i].style.display = "none";
+                }
+              }
+            }
+
+            document.getElementById("Transformers").addEventListener("change", function () {
+              var selectedOption = this.value;
+              if (selectedOption) {
+                window.location.href = selectedOption;
+              }
+            });
+
+          </script>
+          <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+          </script>
+          <p></p>
+          <h6></h6>
+          <!-- Replace 'YOUR_GOOGLE_FORM_URL' with the actual URL of your Google Form -->
+          <style>
+            .responsive-iframe {
+              position: relative;
+              overflow: hidden;
+              padding-top: 56.25%;
+              /* 16:9 aspect ratio (change this value based on your form's aspect ratio) */
+            }
+
+            .responsive-iframe iframe {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          </style>
+
+          <div class="responsive-iframe">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSf-BP1Qh9Nykjo4S6GyDMhutugnSEkoSVhCc7Viqrah8TYcUQ/viewform?embedded=true"
+              width="640" height="1783" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+</html>
