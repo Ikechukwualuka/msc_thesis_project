@@ -3,7 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><b>Utility Field Verification App</b></title>
+  <title><b>Utility Field Operation App</b></title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -58,18 +58,21 @@
       color: white;
       padding: 16px;
       font-size: 16px;
-      border: none;
+      border: 1px solid #ff0000;
+      border-radius: 5px;
       cursor: pointer;
       width: 100%;
     }
 
     /* Style the dropdown button */
     .searchme {
-      background-color: #87CEEB;
+      background-color: #409bc9;
       color: white;
       padding: 16px;
       font-size: 16px;
-      border: none;
+      font-weight: bold;
+      border: 2px solid #ff0000;
+      border-radius: 5px;
       cursor: pointer;
       width: 90%;
       border-radius: 10px;
@@ -122,6 +125,8 @@
       display: none;
       position: absolute;
       background-color: #f1f1f1;
+      border: 1px solid #ff0000;
+      border-radius: 5px;
       min-width: 160px;
       z-index: 1;
     }
@@ -185,13 +190,15 @@
   <div class="phone-frame">
     <div class="phone-screen">
       <img src="https://imgur.com/kIMZKc8.png" alt="topbar" class="app-logo">
-      <h3 class="halo-text">For - Distribution Insight | Field Operation | Energy Track | DSS Overview | Issue Log</h3>
+      <h3 class="halo-text">For - Network Insight | Field Operation | Fault Trace | DSS Overview | Issue Log</h3>
       <style>
         .drop {
           display: flex;
           flex-direction: row;
           align-items: center;
           background-color: #87CEEB;
+          border: 1px solid #00008b;
+          border-radius: 5px;
 
         }
 
@@ -278,18 +285,80 @@
       </label>
 
       <h4>
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
 
+    .dropbtn {
+        background-color: #409bc9;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        border: 2px solid #ff0000;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        max-height: 200px; /* Set a maximum height for the dropdown */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #cceeff;
+    }
+</style>
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">Click to Select Modeled Transformer</button>
           <div id="myDropdown" class="dropdown-content">
-            <a href="https://qgiscloud.com/CHUKWUALUKA/Thesis_Study_Coverage/?l=direct%20customer%20%2Cindirect%20consumer%20%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cinjection%20ss%2Ctcn%20station%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cdss%20to%20pole%20line%2Cdistributor%20line%20%2Cfeeder%20line%2Cht%20to%20dss%20line%2Cinjection%20to%20ht%20connection%2Ctcn%20injection%20connection%2Cstudy%20area%201m%20contour!%2Croad%2Cbuilding%20footprint%2Cstudy%20area%20boundary%2CDEM%20imagery!&bl=mapnik&t=Thesis_Study_Coverage&e=752122%2C683324%2C756356%2C685396">Study_Area</a>
+            <a href="https://qgiscloud.com/CHUKWUALUKA/Thesis_Study_Coverage/?l=direct%20customer%20%2Cindirect%20consumer%20%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cinjection%20ss%2Ctcn%20station%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cdss%20to%20pole%20line%2Cdistributor%20line%20%2Cfeeder%20line%2Cht%20to%20dss%20line%2Cinjection%20to%20ht%20connection%2Ctcn%20injection%20connection%2Cstudy%20area%201m%20contour!%2Croad%2Cbuilding%20footprint%2Cstudy%20area%20boundary%2CDEM%20imagery!&bl=mapnik&t=Thesis_Study_Coverage&e=752122%2C683324%2C756356%2C685396">Study_Area (Study Coverage Model)</a>
             <a
-              href="https://qgiscloud.com/GEOsolution/Shanahan_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cbuilding%2Cboundary&bl=&t=Shanahan_DSS_Transformer_&e=753975%2C683949%2C754821%2C684363">Shanahan_DSS</a>
+              href="https://qgiscloud.com/GEOsolution/Shanahan_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cbuilding%2Cboundary&bl=&t=Shanahan_DSS_Transformer_&e=753975%2C683949%2C754821%2C684363">Shanahan_Transformer</a>
             <a
-              href="https://qgiscloud.com/Mapper/Umuchu_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20power%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cbuilding%2Cboundary&bl=&t=Umuchu_DSS_Transformer_&e=753448%2C684280%2C754295%2C684694">Umuchu_DSS</a>
+              href="https://qgiscloud.com/Mapper/Umuchu_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20power%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cbuilding%2Cboundary&bl=&t=Umuchu_DSS_Transformer_&e=753448%2C684280%2C754295%2C684694">Umuchu_Transformer</a>
             <a
 
-href="https://qgiscloud.com/CHUKWUALUKA/Yahaya_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cyahaya_dss_building%2Cboundary&bl=&t=Yahaya_DSS_Transformer_&e=753989%2C684218%2C754836%2C684632">Yahaya_DSS</a>              
+href="https://qgiscloud.com/CHUKWUALUKA/Yahaya_DSS_Transformer_/?l=direct%20customer%2Cindirect%20consumer%2Cnot%20connected%20potential%2Clow%20tension%20pole%2Chigh%20tension%20pole%2Cdss%20transformer%2Cservice%20wire%2Cindirect%20connection%2Cdss%20to%20lt%20pole%20line%2Cht%20to%20dss%20line%2Cdistributor%20line%2Cfeeder%20line%2Croad%2Cyahaya_dss_building%2Cboundary&bl=&t=Yahaya_DSS_Transformer_&e=753989%2C684218%2C754836%2C684632">Yahaya_Transformer</a>   
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var dropdown = document.querySelector(".dropdown");
+        var dropdownContent = document.querySelector(".dropdown-content");
+
+        dropdown.addEventListener("click", function(event) {
+            if (event.target.tagName === 'A') {
+                // If the clicked element is an anchor tag (link), prevent the default behavior
+                // (opening in the same tab) and open it in a new tab
+                event.preventDefault();
+                window.open(event.target.href, '_blank');
+            } else {
+                // Toggle the visibility of the dropdown content
+                dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+            }
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!dropdown.contains(event.target)) {
+                dropdownContent.style.display = "none";
+            }
+        });
+    });
+</script>          
           </div>
       </h4>
       <title>Real Search Button</title>
@@ -297,7 +366,7 @@ href="https://qgiscloud.com/CHUKWUALUKA/Yahaya_DSS_Transformer_/?l=direct%20cust
 
       <body>
         <div class="searchme">
-          <label for="Transformers">Select Maps here:</label>
+          <label for="Transformers">Select Map here:</label>
           <select id="Transformers">
             <option value="https://drive.google.com/file/d/1Yy9xYSjfim2h7eqNyeuZBBbm2UwbHIyV/view?usp=drive_link">
               Shanahan DSS</option>
@@ -310,31 +379,38 @@ href="https://qgiscloud.com/CHUKWUALUKA/Yahaya_DSS_Transformer_/?l=direct%20cust
           <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search">
 
 
-          <script>
-            function searchFunction() {
-              var input, filter, select, option, search, i;
-              input = document.getElementById("searchInput");
-              filter = input.value.toUpperCase();
-              select = document.getElementById("Transformers");
-              option = select.getElementsByTagName("option");
-              search = document.getElementById("searchInput").value;
-              for (i = 0; i < option.length; i++) {
-                if (option[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                  option[i].style.display = "";
-                } else {
-                  option[i].style.display = "none";
-                }
-              }
-            }
+  <script>
+  function searchFunction() {
+    var input, filter, select, option, search, i;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    select = document.getElementById("Transformers");
+    option = select.getElementsByTagName("option");
+    search = document.getElementById("searchInput").value;
+    for (i = 0; i < option.length; i++) {
+      if (option[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        option[i].style.display = "";
+      } else {
+        option[i].style.display = "none";
+      }
+    }
+  }
 
-            document.getElementById("Transformers").addEventListener("change", function () {
-              var selectedOption = this.value;
-              if (selectedOption) {
-                window.location.href = selectedOption;
-              }
-            });
+  document.getElementById("Transformers").addEventListener("change", function () {
+    var selectedOption = this.value;
+    if (selectedOption) {
+      // Check if the selected option is visible
+      var isVisible = Array.from(this.options).some(option => option.style.display !== 'none' && option.value === selectedOption);
+      if (isVisible) {
+        // Open the link in a new browser window
+        window.open(selectedOption, '_blank');
+      } else {
+        alert("Selected option is not visible. Please make a visible selection.");
+      }
+    }
+  });
 
-          </script>
+</script>
           <script>
             /* When the user clicks on the button, 
             toggle between hiding and showing the dropdown content */
